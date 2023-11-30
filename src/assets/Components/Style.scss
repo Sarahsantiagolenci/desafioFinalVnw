@@ -1,0 +1,43 @@
+
+
+
+// variáveis
+$font-stack: 'Work Sans';
+$text-color: #fff;
+$text-color-secondary: #a6a6a6;
+$left: flex-start;
+
+@mixin alinhar  {
+    display: flex;
+    justify-content: center;
+    align-itens: center;
+}
+
+header {
+    @include alinhar;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+}
+
+a, svg {
+    transition: .4s;
+}
+
+body {
+    background-image: linear-gradient (#000000, #993399);
+}
+
+h1 {
+    color: $text-color;
+}
+
+figure {
+    display: flex;
+    justify-content: $left;
+}
+

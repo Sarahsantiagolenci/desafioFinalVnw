@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+a, svg {
+  transition: 0.4s;
+}
+
+body {
+  background-image: linear-gradiente #000000, #993399;
+}/*# sourceMappingURL=style.css.map */
