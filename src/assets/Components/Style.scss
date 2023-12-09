@@ -1,3 +1,6 @@
+// Gostaria que meu projeto tivesse ficado melhor, porém fiz o que fui conseguindo e estou grata por toda a ajuda que recebi e pelo que consegui construir e aprender, praticando react e sass, que foi totalmente novo para mim.
+// OBS: minha parte mobile está comentada porque estava dando erro...
+// Obrigado João, você é um professor incrível! :)
 
 
 
@@ -5,16 +8,26 @@
 $font-stack: 'Work Sans';
 $text-color: #fff;
 $text-color-secondary: #a6a6a6;
+$color-complementary: #FFFF00;
 $left: flex-start;
+$font-size-one: 30px;
+$font-size-two: 25px;
+$border: solid #c8a2c8;
 
 @mixin alinhar  {
     display: flex;
     justify-content: center;
-    align-itens: center;
+    align-items: center;
 }
 
-header {
-    @include alinhar;
+@mixin left {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@mixin right {
+    display: flex;
+    justify-content: flex-end;
 }
 
 * {
@@ -24,20 +37,205 @@ header {
     font-family: 'Work Sans', sans-serif;
 }
 
-a, svg {
-    transition: .4s;
+body {
+    display: flex;
+    background-image:linear-gradient( to left,  #000000, #993399);
 }
 
-body {
-    background-image: linear-gradient (#000000, #993399);
+nav {
+    @include right;
+    width: 100vw;
+    margin-top: 15px;
+    ul {
+    display: flex;
+    justify-content: space-around;
+    width: 50vw;
+    }
+    li {
+        list-style: none;
+    }
+    a {
+        font-size: 25px;
+        color: $color-complementary;
+        text-decoration: none;
+    }
+    // @media screen and(max-width: 500px) {
+    //     display: flex;
+        // justify-content: flex-start;
+    // } - queria deixar à esquerda da tela
+}
+
+header {
+    @include left;
+    align-items: center;
+    height: 80vh;
+    // @media screen and(max-width: 500px) {
+    //     display: flex;
+    //     flex-direction: column;
+    // } - deixar à esquerda e em coluna
+}
+
+.sectionHome {
+    flex-direction: column;
+    margin-left: 100px;
+    margin-top: 15px;
 }
 
 h1 {
     color: $text-color;
+    font-size: $font-size-one;
+}
+
+h2 {
+    color: $text-color-secondary;
+    font-size: $font-size-two;
 }
 
 figure {
-    display: flex;
-    justify-content: $left;
+   @include right;
+   align-items: flex-end;
+   margin-left: 60px;
+   width: 32vw;
 }
+
+img {
+   width: 10vw;
+   height: 31vh;
+   border: $border;
+   border-radius: 10% 10% 10% 10%;
+}
+
+figcaption {
+    @include left;
+    flex-direction: column;
+    position: relative;
+    top: 40px;
+    a {
+        text-decoration: none;
+        color: $color-complementary;
+    }
+    &:hover{
+        transform: scale(107%);
+}
+}
+
+
+.sectionAbout {
+    @include right;
+    flex-direction: column;
+    width: 50vw;
+    height: 40vh;
+    margin-left: 25px;
+    margin-top: 100px;
+    // @media screen and(max-width: 500px) {
+    //     display: flex;
+    //     justify-content: center;
+    // } - deixar centralizado/ ver se ficou ok tamanho da letra
+}
+
+h3 {
+    color: $text-color;
+    font-size: $font-size-one;
+}
+
+p {
+    margin-top: 15px;
+    color: $text-color-secondary;
+    font-size: $font-size-two;
+}
+
+.figureAbout {
+    @include right;
+    width: 90vw;
+    height: 20vh;
+    // @media screen and(max-width: 500px) {
+    //     display: flex;
+    //     justify-content: flex-start;
+    // } - deixar à esquerda da tela
+}
+
+h4 {
+    color: $color-complementary;
+}
+
+.divIconsTec {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-around;
+    margin-top: 5px;
+    color: #ff6347;
+    width: 50vw;
+    svg {
+        height: 10vh;
+        width: 7vw;
+    }
+}
+
+.sectionProjects {
+    @include alinhar;
+    justify-content: space-around;
+    width: 100%;
+    height: 60vh;
+    img {
+        border: $border;
+        width: 20vw;
+        height: 35vh;
+    }
+    // @media screen and(max-width: 500px) {
+    //     flex-wrap: wrap;
+    // } - não deixar todas as imgs numa fileira só 
+} 
+
+.sectionContatos {
+    @include alinhar;
+    justify-content: space-evenly;
+    margin-top: 50px;
+    height: 30vh;
+    color: #0000FF;
+    background-image: linear-gradient(to left, #ffffff, #993399);
+}
+
+.contatos {
+    color: $color-complementary;
+    svg {
+        background-color: white;
+        border: solid green;
+        width: 100%;
+    }
+}
+
+.divMsg {
+    @include alinhar;
+    flex-direction: column;
+    margin-left: 40px;
+    background-image: linear-gradient(to left, #ffffff, #993399);
+    input {
+        width: 35vw;
+        height: 30vh;
+        border: solid #808080;
+        border-radius: 25% 25% 25% 25%;
+        // @media screen and(max-width: 500px) {
+        //     width: 45vw;
+        // } - aumentar largura da caixa
+    }
+    button {
+        width: 10vw;
+        height: 10vh;
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-bottom: 5px;
+        background-color: #E0C4DF;
+        border-radius: 35% 35% 35% 35%;
+        border: none;
+        border: solid #ff007f;
+        // @media screen and(max-width: 500px) {
+        //     width: 25vw;
+        // } - aumentar tamanho da caixa
+    }
+    // @media screen and(max-width: 500px) {
+    //     display: flex;
+    //     align-items: center;
+    // } - deixar centralizado
+}
+
 
